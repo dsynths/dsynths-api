@@ -1,7 +1,7 @@
 {
   "name": "dsynths-api",
   "version": "1.0.0",
-  "description": "Private API Server for the dSynths App",
+  "description": "Markets API for DEUS Synchronizer platforms",
   "main": "dist/index.js",
   "scripts": {
     "build-ts": "tsc",
