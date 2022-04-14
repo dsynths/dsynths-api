@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import helmet from 'helmet'
+import compression from 'compression'
 
 import { cryptoRouter } from './crypto/router'
 import { stocksRouter } from './stocks/router'
@@ -20,6 +21,9 @@ const PORT: number = parseInt(process.env.PORT as string, 10)
 const app = express()
 app.listen(PORT, () => console.log(`Running on port ${PORT}`))
 
+if (process.env.COMPRESSION) {
+  app.use(compression())
+}
 app.use(helmet())
 
 app.use(
